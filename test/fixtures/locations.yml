@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: Toronto
+  lat: 43.70011
+  long: -79.4163
+
+two:
+  name: Raleigh
+  lat: 	35.7721
+  long: -78.63861
