@@ -35,6 +35,16 @@ Given References:
 2. [System Tests in RSpec](https://relishapp.com/rspec/rspec-rails/docs/system-specs/system-spec)
 3. Weather API: [Open-Meteo](https://open-meteo.com/en/docs)
 
+Other APIs Needed/Used:
+
+1. [Open-Meteo Geolocation](https://open-meteo.com/en/docs/geocoding-api#api-documentation)
+2. Geolocation by IP Address ... options:
+    1. [ipinfo.io free plan](https://ipinfo.io/products/ip-geolocation-api)
+    2. [ipgeolocation free plan](https://ipgeolocation.io/ip-location-api.html)
+    3. [ip-api non-commercial, no API key](https://ip-api.com/docs/api:json)
+    4. [ipapi.co free and keyless plan](https://ipapi.co/free/)
+
+
 ## Running the App
 
 Use Ruby version 3.1.2.
