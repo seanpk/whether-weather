@@ -1,11 +1,19 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+toronto:
   name: Toronto
+  political_unit: Ontario, Canada
   lat: 43.70011
   long: -79.4163
 
-two:
+raleigh:
   name: Raleigh
+  political_unit: North Carolina, United States
   lat: 	35.7721
   long: -78.63861
+
+foobar:
+  name: Foo
+  political_unit: Bar, Baz
+  lat: 	90
+  long: 0

@@ -70,3 +70,8 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+
+## Application-specific Gems
+
+gem "rest-client"

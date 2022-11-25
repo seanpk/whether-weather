@@ -1,0 +1,8 @@
+<h1>Location Finder</h1>
+<p>For where do you want a forecast?</p>
+
+<%= form_with url: "/locations/search", method: :get do |form| %>
+  <%= form.label :query, "Search for your location by city name:" %>
+  <%= form.text_field :query %>
+  <%= form.submit "Search" %>
+<% end %>

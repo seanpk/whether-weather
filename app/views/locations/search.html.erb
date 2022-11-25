@@ -1,0 +1,10 @@
+<h1>Matching Locations</h1>
+<p>Here are the results that match:</p>
+
+<ul>
+  <% @locations.each do |location| %>
+    <li>
+      <%= location.display_name %>
+    </li>
+  <% end %>
+</ul>
