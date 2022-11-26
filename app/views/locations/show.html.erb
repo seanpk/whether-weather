@@ -1,0 +1,14 @@
+<h2>Location: <%= @location.display_name %> </h1>
+
+<table>
+    <tr>
+        <th>Latitude: </th>
+        <td> <%= @location.lat %>
+    </tr>
+    <tr>
+        <th>Longitude: </th>
+        <td> <%= @location.long %>
+    </tr>
+</table>
+
+<p>Last updated: <%= @location.updated_at %>

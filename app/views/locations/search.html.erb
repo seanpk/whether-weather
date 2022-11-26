@@ -4,7 +4,7 @@
 <ul>
   <% @locations.each do |location| %>
     <li>
-      <%= location.display_name %>
+      <%= location.display_name %> <%= button_to 'Add to My List', locations_path, params: { location: loc_to_hash(location) } %>
     </li>
   <% end %>
 </ul>

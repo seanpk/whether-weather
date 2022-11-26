@@ -19,4 +19,8 @@ class Location < ApplicationRecord
         self.uuid = Digest::UUID.uuid_v5(Digest::UUID::OID_NAMESPACE, to_str())
         return self.uuid
     end
+
+    def to_param
+        return get_uuid()
+    end
 end

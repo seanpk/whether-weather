@@ -1,0 +1,16 @@
+<h2>Forecast for <%= @location.display_name %> </h2>
+
+<table>
+    <tr>
+        <th>Date</th>
+        <th>High</th>
+        <th>Low</th>
+    </tr>
+  <% @forecast.latest.each do |forecast_day| %>
+    <tr>
+        <td> <%= forecast_day[:date] %> </td>
+        <td> <%= forecast_day[:high] %> <%= temperature_units %> </td>
+        <td> <%= forecast_day[:low] %> <%= temperature_units %> </td>
+    </tr>
+  <% end %>
+</table>
