@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_25_182650) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_26_073550) do
+  create_table "forecasts", force: :cascade do |t|
+    t.integer "location_id", null: false
+    t.text "latest"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["location_id"], name: "index_forecasts_on_location_id"
+  end
+
   create_table "locations", force: :cascade do |t|
     t.string "name"
     t.decimal "lat"
@@ -22,4 +30,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_25_182650) do
     t.index ["uuid"], name: "index_locations_on_uuid", unique: true
   end
 
+  add_foreign_key "forecasts", "locations"
 end
