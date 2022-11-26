@@ -12,8 +12,19 @@ raleigh:
   lat: 	35.7721
   long: -78.63861
 
-foobar:
-  name: Foo
-  political_unit: Bar, Baz
+nonsense:
+  name: Nonsense
+  political_unit: Nowhere, No Place
   lat: 	90
+  long: 0
+
+vatican:
+  name: Vatican City
+  political_unit: Vatican City
+  lat: 41.90268
+  long: 12.45414
+
+noname:
+  political_unit: No Matter
+  lat: 0
   long: 0

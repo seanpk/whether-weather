@@ -18,6 +18,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_25_182650) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "political_unit"
+    t.string "uuid"
+    t.index ["uuid"], name: "index_locations_on_uuid", unique: true
   end
 
 end

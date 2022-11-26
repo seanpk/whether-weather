@@ -6,8 +6,20 @@ class LocationTest < ActiveSupport::TestCase
     assert_not(location.save)
   end
 
+  test "invalid without required fields" do
+    location = locations(:noname)
+    assert_not(location.valid?)
+    location.name = "Here"
+    assert(location.valid?)
+    location.political_unit = nil
+    assert_not(location.valid?)
+
+    location = Location.new(name: "Somewhere", political_unit: "Elsewhere")
+    assert_not(location.valid?)
+  end
+
   test "latiutude should be in [-90, 90]" do
-    location = locations(:foobar)
+    location = locations(:nonsense)
     assert(location.valid?)
     location.lat = 91
     assert_not(location.valid?)
@@ -18,7 +30,7 @@ class LocationTest < ActiveSupport::TestCase
   end
 
   test "longitude should be in [-180, 180]" do
-    location = locations(:foobar)
+    location = locations(:nonsense)
     assert(location.valid?)
     location.long = 181
     assert_not(location.valid?)
