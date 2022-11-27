@@ -75,3 +75,4 @@ end
 ## Application-specific Gems
 
 gem "rest-client"
+gem "rspec-rails", group: [:development, :test]
