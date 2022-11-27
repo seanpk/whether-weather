@@ -12,8 +12,11 @@ class LocationService
 
         if (response['results'])
             for result in response['results']
-                punit_str = (result['admin1'] and !result['admin1'].empty?) ? "#{result['admin1']}, " : ""
-                punit_str += "#{result['country']}"
+                punit_parts = []
+                for punit in ['admin1', 'country'] do
+                    punit_parts << result[punit] unless (!result[punit] or result[punit].empty?)
+                end
+                punit_str = punit_parts.join(', ')
                 results.append(Location.new(
                     name: result['name'],
                     political_unit: punit_str,

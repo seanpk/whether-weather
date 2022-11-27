@@ -28,3 +28,17 @@ noname:
   political_unit: No Matter
   lat: 0
   long: 0
+
+wake_forest:
+  name: Wake Forest
+  political_unit: North Carolina, United States
+  lat: 35.97987
+  long: -78.50972
+  uuid: f97bbfc1-f651-5669-a671-f75e018b097
+
+castletown:
+  name: Castletown
+  political_unit: Castletown
+  lat: 54.07445
+  long: -4.65365
+  uuid: 9f05e415-1ec8-51a1-8532-f73c035ad502
