@@ -5,6 +5,10 @@ class ForecastsController < ApplicationController
 
   def show
     @location = Location.find_by_uuid(params[:uuid])
+    if (!@location)
+      render :file => 'public/404.html', :status => :not_found, :layout => false
+      return
+    end
 
     @forecast = Forecast.find_by_location_id(@location.id) || Forecast.new(location: @location)
     unless (@forecast.updated_at and @forecast.updated_at > DateTime.now.ago(FORECAST_TTL))

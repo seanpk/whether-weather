@@ -33,6 +33,10 @@ class LocationsController < ApplicationController
   end
 
   def show
-    @location = Location.find_by(uuid: params[:uuid])
+    @location = Location.find_by_uuid(params[:uuid])
+    if (!@location)
+      render :file => 'public/404.html', :status => :not_found, :layout => false
+      return
+    end
   end
 end
