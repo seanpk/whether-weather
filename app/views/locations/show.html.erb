@@ -11,4 +11,6 @@
     </tr>
 </table>
 
-<p>Last updated: <%= @location.updated_at %>
+<p>Last updated: <%= @location.updated_at %> </p>
+
+<%= button_to 'Get Forecast', location_forecast_path, method:'get' %>

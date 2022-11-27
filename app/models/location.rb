@@ -23,4 +23,8 @@ class Location < ApplicationRecord
     def to_param
         return get_uuid()
     end
+
+    def self.from_uuid(uuid)
+        return find_by_uuid(uuid)
+    end
 end

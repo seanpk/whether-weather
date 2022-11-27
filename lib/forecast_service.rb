@@ -1,7 +1,8 @@
 require 'rest-client'
 
 class ForecastService
-    @@base_url = 'https://api.open-meteo.com/v1/forecast'
+    @@BASE_URL = 'https://api.open-meteo.com/v1/forecast'
+    
     def self.predict(loc)
         fc = Forecast.new(location: loc, latest: [])
         high_key = "temperature_2m_max"
@@ -9,7 +10,7 @@ class ForecastService
 
         # this needs to be factored out so that the response can be mocked and the request handling can be validated
         # it should also be surounded for error handling in case the request fails
-        response = ActiveSupport::JSON.decode(RestClient.get(@@base_url, { params: { 
+        response = ActiveSupport::JSON.decode(RestClient.get(@@BASE_URL, { params: { 
                 latitude: loc.lat,
                 longitude: loc.long,
                 daily: [high_key , low_key],

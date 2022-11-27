@@ -1,7 +1,7 @@
 class CreateForecasts < ActiveRecord::Migration[7.0]
   def change
     create_table :forecasts do |t|
-      t.references :location, null: false, foreign_key: true
+      t.belongs_to :location, null: false
       t.text :latest
 
       t.timestamps

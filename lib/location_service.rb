@@ -1,13 +1,14 @@
 require 'rest-client'
 
 class LocationService
-    @@base_url = 'https://geocoding-api.open-meteo.com/v1/search'
+    @@BASE_URL = 'https://geocoding-api.open-meteo.com/v1/search'
+
     def self.search(query)
         results = []
 
         # this needs to be factored out so that the response can be mocked and the request handling can be validated
         # it should also be surounded for error handling in case the request fails
-        response = ActiveSupport::JSON.decode(RestClient.get(@@base_url, { params: { name: query } }))
+        response = ActiveSupport::JSON.decode(RestClient.get(@@BASE_URL, { params: { name: query } }))
 
         if (response['results'])
             for result in response['results']
