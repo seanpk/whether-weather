@@ -17,10 +17,15 @@ class LocationsController < ApplicationController
       long: loc_hash['long'],
       uuid: loc_hash['uuid']
     )
-    if @location.save
-      redirect_to @location
+    existing_location = Location.find_by_uuid(@location.uuid)
+
+    if (existing_location)
+      @location = existing_location
+      redirect_to @location, status: :found
+    elsif (@location.save)
+      redirect_to @location, status: :created
     else
-      redirect_to :root
+      render :file => 'public/500.html', :status => :internal_server_error, :layout => false
     end
   end
 
