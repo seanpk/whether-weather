@@ -2,6 +2,12 @@ require 'location_service'
 
 class LocationsController < ApplicationController
   def index
+    @locations = []
+    for fc in Forecast.order(updated_at: :desc) do
+      @locations << fc.location
+    end
+    @locations += Location.order(id: :desc)
+    @locations.uniq { |loc| loc.id }
   end
   
   def search

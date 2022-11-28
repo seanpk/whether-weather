@@ -1,8 +1,29 @@
-<h1>Location Finder</h1>
-<p>For where do you want a forecast?</p>
+<% if request.fullpath == '/' %>
+<h1>Whether Weather</h1>
 
+<p>Find places and get forecasts for them.</p>
+<% else %>
+<p class="nav-link"> <%= link_to "Front Page", :root %></p>
+<% end %>
+
+<h3>Search</h3>
 <%= form_with url: "/locations/search", method: :get do |form| %>
-  <%= form.label :query, "Search for your location by city name:" %>
+  <%= form.label :query, "Search by place name:" %>
   <%= form.text_field :query %>
   <%= form.submit "Search" %>
 <% end %>
+<p>Find and add places to your list, then get forecasts for them.</p>
+
+<h3>Locations</h3>
+
+<p>These are the cities already on your list.</p>
+
+<table>
+  <% @locations.each do |loc| %>
+    <tr>
+        <td class="place-link"> <%= link_to loc.display_name, location_path(loc) %> </td>
+        <td> <%= button_to "Get Forecast", location_forecast_path(loc), method: 'get' %> </td>
+        <td> <%= button_to "Remove Location", location_path(loc), method: 'delete', data: { turbo_confirm: "Remove #{loc.display_name}?" }, class: "deleter" %> </td>
+    </tr>
+  <% end %>
+</table>
