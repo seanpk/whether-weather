@@ -1,4 +1,5 @@
-<h2>Forecast for <%= @location.display_name %> </h2>
+<h2 class="place-link">Forecast for <%= link_to @location.display_name, location_path(@location) %></h2>
+<p class="nav-link"> <%= link_to "Front Page", :root %> | <%= link_to "Location Page", location_path(@location) %> </p>
 
 <table>
     <tr>

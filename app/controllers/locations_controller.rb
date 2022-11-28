@@ -60,7 +60,6 @@ class LocationsController < ApplicationController
     @location = Location.find_by_uuid(params[:uuid])
     if (!@location)
       render :file => 'public/404.html', :status => :not_found, :layout => false
-      return
     end
   end
 end

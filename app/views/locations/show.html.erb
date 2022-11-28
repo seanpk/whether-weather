@@ -1,5 +1,5 @@
 <h2>Location: <%= @location.display_name %> </h1>
-
+<p class="nav-link"> <%= link_to "Front Page", :root %> | <%= link_to "Get Forecast", location_forecast_path %> </p>
 <table>
     <tr>
         <th>Latitude: </th>
@@ -12,5 +12,4 @@
 </table>
 
 <p>Last updated: <%= @location.updated_at %> </p>
-
-<%= button_to 'Get Forecast', location_forecast_path, method:'get' %>
+<%= button_to "Remove Location", location_path, method: 'delete', data: { turbo_confirm: "Remove #{@location.display_name}?" }, class: "deleter" %>
