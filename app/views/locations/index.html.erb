@@ -16,6 +16,9 @@
 
 <h3>Locations</h3>
 
+<% if @locations.empty? %>
+<p>You haven't saved any locations yet, begin by searching for a place to add.</p>
+<% else %>
 <p>These are the cities already on your list.</p>
 
 <table>
@@ -27,3 +30,4 @@
     </tr>
   <% end %>
 </table>
+<% end %>
