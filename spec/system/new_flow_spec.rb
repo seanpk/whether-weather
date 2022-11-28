@@ -27,22 +27,22 @@ RSpec.describe "NewFlow", type: :system do
     fill_in "query", :with => loc_new.name
     click_button "Search"
 
-    expect(page).to have_text("Matching Locations")
+    expect(page).to have_text("Matching Locations for \"#{loc_new.name}\"")
   end
 
   it "shows a list of matching search results" do
     visit "/locations/search?query=#{loc_new.name}"
 
-    all('li').each do |li|
-      expect(li).to have_text(loc_new.name)
-      expect(li).to have_button("Add to My List")
+    all('tr').each do |tr|
+      expect(tr).to have_text(loc_new.name)
+      expect(tr).to have_button("Add to My List")
     end
   end
 
   it "can add a location to my results" do
     visit "/locations/search?query=#{loc_new.name}"
 
-    within('li', text: loc_new.display_name) do
+    within('tr', text: loc_new.display_name) do
       click_button "Add to My List"
     end
 
@@ -51,13 +51,13 @@ RSpec.describe "NewFlow", type: :system do
     expect(page).to have_text("Longitude")
     expect(page).to have_text(loc_new.long)
 
-    expect(page).to have_button("Get Forecast")
+    expect(page).to have_link("Get Forecast")
   end
 
   it "can get a new forecast" do
     visit "/locations/#{loc_exists.get_uuid}"
 
-    click_button "Get Forecast"
+    click_link "Get Forecast"
 
     expect(page).to have_text("Forecast for #{loc_exists.display_name}")
     expect(page).to have_text("°C")
