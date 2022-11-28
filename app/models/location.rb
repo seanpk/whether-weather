@@ -5,6 +5,8 @@ class Location < ApplicationRecord
     validates :long, presence: true, numericality: { greater_than_or_equal_to: -180.0, less_than_or_equal_to: 180.0 }
     validates :uuid, presence: true, uniqueness: true
 
+    has_one :forecast, dependent: :destroy
+
     before_validation :get_uuid
 
     def display_name
