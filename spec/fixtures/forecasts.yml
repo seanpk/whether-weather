@@ -1,0 +1,4 @@
+srmb:
+  location: swan_river
+  latest: "---\n- :date: '2022-11-25'\n  :high: 5.5\n  :low: 1.25\n- :date: '2022-11-26'\n  :high: 8.5\n  :low: -2\n- :date: '2022-11-27'\n  :high: 5\n  :low: -3.5\n- :date: '2022-11-28'\n  :high: 4.0\n  :low: -6.0\n- :date: '2022-11-29'\n  :high: 2\n  :low: -4.5\n- :date: '2022-11-30'\n  :high: -5\n  :low: -14.5\n- :date: '2022-12-01'\n  :high: 1\n  :low: -10\n"
+  updated_at: <%= DateTime.now %>

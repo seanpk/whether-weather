@@ -4,3 +4,31 @@ swan_river:
   lat: 52.1058
   long: -101.26759
   uuid: b320f656-e0ab-5c1b-ad70-a10aba517847
+
+winnipeg:
+  name: Winnipeg
+  political_unit: Manitoba, Canada
+  lat: 49.8844
+  long: -97.14704 
+  uuid: b992987f-08b5-539a-ad86-df56f193ecf9
+
+kitchener:
+  name: Kitchener
+  political_unit: Ontario, Canada
+  lat: 43.42537
+  long: -80.5112
+  uuid: 5497f739-bfce-5732-a390-5a7896eee017
+
+toronto:
+  name: Toronto
+  political_unit: Ontario, Canada
+  lat: 43.70011
+  long: -79.4163
+  uuid: ce180303-6ff8-51b8-9be6-13ab2c1ba188
+
+raleigh:
+  name: Raleigh
+  political_unit: North Carolina, United States
+  lat: 35.7721
+  long: -78.63861
+  uuid: d8e470d0-86b6-50cd-bea5-3a1dd627ec3b
