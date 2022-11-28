@@ -11,7 +11,18 @@ class LocationsController < ApplicationController
   end
   
   def search
-    @locations = LocationService.search(params[:query])
+    @search_term = params[:query]
+    @locations = LocationService.search(@search_term)
+    existing_locations = []
+    for loc in @locations do
+      existing_location = Location.find_by_uuid(loc.get_uuid)
+      if (existing_location)
+        existing_locations << existing_location
+      end
+    end
+    unless existing_locations.empty?
+      @locations = (existing_locations + @locations).uniq { |loc| loc.uuid }
+    end
   end
 
   def create
