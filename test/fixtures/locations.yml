@@ -5,29 +5,27 @@ toronto:
   political_unit: Ontario, Canada
   lat: 43.70011
   long: -79.4163
+  uuid: ce180303-6ff8-51b8-9be6-13ab2c1ba188
 
 raleigh:
   name: Raleigh
   political_unit: North Carolina, United States
   lat: 	35.7721
   long: -78.63861
+  uuid: d8e470d0-86b6-50cd-bea5-3a1dd627ec3b
 
 nonsense:
   name: Nonsense
   political_unit: Nowhere, No Place
   lat: 	90
   long: 0
+  uuid: a0b527e3-1330-5e7d-a590-c70be92a43f4
 
 vatican:
   name: Vatican City
   political_unit: Vatican City
   lat: 41.90268
   long: 12.45414
-
-noname:
-  political_unit: No Matter
-  lat: 0
-  long: 0
 
 wake_forest:
   name: Wake Forest

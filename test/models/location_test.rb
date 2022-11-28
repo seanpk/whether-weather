@@ -7,7 +7,11 @@ class LocationTest < ActiveSupport::TestCase
   end
 
   test "invalid without required fields" do
-    location = locations(:noname)
+    location = Location.new do |loc|
+      loc.political_unit = "No Matter"
+      loc.lat = 0
+      loc.long = 0
+    end
     assert_not(location.valid?)
     location.name = "Here"
     assert(location.valid?)

@@ -21,9 +21,11 @@ class LocationsController < ApplicationController
 
     if (existing_location)
       @location = existing_location
-      redirect_to @location, status: :found
+      redirect_to location_path(@location), status: :found
     elsif (@location.save)
-      redirect_to @location, status: :created
+      # redirect_to location_path(@location), status: :created
+      # browswers are not doing that redirect, they're taking the 201 and staying on /locations
+      redirect_to location_path(@location)
     else
       render :file => 'public/500.html', :status => :internal_server_error, :layout => false
     end
