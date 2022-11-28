@@ -6,8 +6,7 @@ class LocationsController < ApplicationController
     for fc in Forecast.order(updated_at: :desc) do
       @locations << fc.location
     end
-    @locations += Location.order(id: :desc)
-    @locations.uniq { |loc| loc.id }
+    @locations = (@locations + Location.order(id: :desc)).uniq { |loc| loc.id }
   end
   
   def search
