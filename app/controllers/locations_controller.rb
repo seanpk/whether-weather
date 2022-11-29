@@ -52,7 +52,7 @@ class LocationsController < ApplicationController
     if @location
       @location.destroy
     end
-    redirect_to :root
+    redirect_to :root, status: :see_other
   end
 
   def show
